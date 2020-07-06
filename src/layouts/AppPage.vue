@@ -2,7 +2,7 @@
   <div class="app-page">
     <the-navbar />
     <main class="app-page__main">
-      <v-searchrow />
+      <v-searchrow class="view-container" />
       <section class="app-page__content">
         <slot />
       </section>
@@ -35,7 +35,13 @@ export default {
   display: flex;
 
   &__main {
+    margin-left: 104px;
     flex-grow: 1;
+    margin-top: 24px;
   }
+}
+
+.view-container {
+  padding: 0 88px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <app-page>
-    <div class="summary">
+    <div class="summary view-container">
       Summary page
     </div>
   </app-page>

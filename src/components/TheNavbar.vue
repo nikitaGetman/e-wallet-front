@@ -33,7 +33,7 @@ export default {
       navItems: [
         { to: { name: 'summary' }, text: 'Summary', icon: 'fa-list-ul' },
         { to: { name: 'history' }, text: 'History', icon: 'fa-history' },
-        { to: { name: 'money-transfer' }, text: 'Money Transfer', icon: 'fa-hand-holding-usd' },
+        { to: { name: 'money-transfer' }, text: 'Transfer', icon: 'fa-hand-holding-usd' },
         { to: { name: 'account' }, text: 'Account', icon: 'fa-id-card' },
         { to: { name: 'offers' }, text: 'Offers', icon: 'fa-business-time' },
         { to: { name: 'help' }, text: 'Help', icon: 'fa-tools' }
@@ -55,8 +55,6 @@ export default {
 
 <style lang="scss">
 .navbar {
-  $this: &;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -79,13 +77,13 @@ export default {
     margin-top: 12px;
   }
   &__nav {
-    margin-top: 24px;
+    margin-top: 32px;
   }
   &__list {
   }
   &__item {
     margin: 10px 0;
-    padding: 14px 4px;
+    padding: 16px;
     border-radius: 24px;
     transition: 0.2s;
 
