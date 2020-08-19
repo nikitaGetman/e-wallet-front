@@ -5,13 +5,32 @@ $secondary: #fc6535;
 $pink: #ffd0c1;
 $black: #000000;
 $gray-400: #efefef;
+$gray-330: #c4c4c4;
 $gray-300: #c3c5d4;
+$gray-200: #b0b2be;
 $gray-100: #7a7a7a;
+$gray-10: #2a2a2a;
 $primary-text-color: #92b3fc;
 $primary-darken-text-color: #4e69b6;
 $primary-lighter-text-color: #b5c7fb;
-
 $primary-gradient: linear-gradient(180deg, #1d337c, #2e56d7);
 
 // fonts
 $primary-font: 'Lato', Helvetica, Arial;
+
+$card-border-radius: 48px;
+
+$speed-slow: 150ms !default;
+$speed-slower: 250ms !default;
+
+// $primary: #7957d5 !default;
+// $primary-invert: $white !default;
+
+// $info: #167df0 !default;
+
+// $link: $primary !default;
+// $link-invert: $primary-invert !default;
+// $link-visited: $grey !default;
+// $link-focus-border: $primary !default;
+
+// $label-weight: $weight-semibold !default;

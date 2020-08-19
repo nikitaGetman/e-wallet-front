@@ -37,11 +37,7 @@ export default {
   &__main {
     margin-left: 104px;
     flex-grow: 1;
-    margin-top: 24px;
+    margin-top: 8px;
   }
-}
-
-.view-container {
-  padding: 0 88px;
 }
 </style>

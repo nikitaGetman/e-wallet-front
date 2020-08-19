@@ -1,9 +1,6 @@
 <template>
   <div class="sidebar">
     <div class="sidebar__control">
-      <!-- <button class="sidebar__button">
-        <i class="fas fa-filter"></i>
-      </button> -->
       <button class="sidebar__button">
         <i class="fas fa-cog"></i>
       </button>
@@ -11,16 +8,31 @@
     <div class="sidebar__section sidebar__section--card">
       <div class="sidebar__header">
         <h4 class="sidebar__title title">My Card</h4>
-        <button class="sidebar__action"><i class="fas fa-plus"></i></button>
+
+        <v-button rounded outlined icon>
+          <i class="fas fa-plus"></i>
+        </v-button>
       </div>
       <div class="sidebar__carousel sidebar__carousel--card">
-        <!-- TODO -->
+        <v-carousel>
+          <v-carousel-item>
+            <v-card>1</v-card>
+          </v-carousel-item>
+          <v-carousel-item>
+            <v-card>2</v-card>
+          </v-carousel-item>
+          <v-carousel-item>
+            <v-card>3</v-card>
+          </v-carousel-item>
+        </v-carousel>
       </div>
     </div>
     <div class="sidebar__section sidebar__section--bank">
       <div class="sidebar__header">
         <h4 class="sidebar__title title">My Bank</h4>
-        <button class="sidebar__action"><i class="fas fa-plus"></i></button>
+        <v-button rounded outlined icon>
+          <i class="fas fa-plus"></i>
+        </v-button>
       </div>
       <div class="sidebar__carousel sidebar__carousel--bank">
         <!-- TODO -->
@@ -30,20 +42,35 @@
 </template>
 
 <script>
+import VCard from '@/components/common/VCard.vue'
+import VButton from '@/components/common/VButton.vue'
+import VCarousel from '@/components/common/VCarousel.vue'
+import VCarouselItem from '@/components/common/VCarouselItem.vue'
+
 export default {
-  name: 'TheSidebar'
+  name: 'TheSidebar',
+  components: {
+    VCard,
+    VButton,
+    VCarousel,
+    VCarouselItem
+  },
+  data: function() {
+    return {}
+  }
 }
 </script>
 
 <style lang="scss">
 .sidebar {
-  flex: 0 1 550px;
+  width: 550px;
   background-color: #f0f1f5;
-  padding: 32px;
-  border-top-left-radius: 48px;
-  border-bottom-left-radius: 48px;
+  padding: 32px 0 32px 32px;
+  border-top-left-radius: $card-border-radius;
+  border-bottom-left-radius: $card-border-radius;
 
   &__control {
+    margin-right: 16px;
     display: flex;
     justify-content: flex-end;
   }
@@ -57,15 +84,18 @@ export default {
     margin-top: 56px;
   }
   &__header {
+    margin-right: 32px;
+    margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
-  &__action {
-    border-radius: 50%;
-    border: 2px solid $primary;
-    color: $primary;
-    padding: 2px 4px;
+  &__carousel {
+    &--card {
+      .card {
+        margin-right: 50px;
+      }
+    }
   }
 }
 </style>

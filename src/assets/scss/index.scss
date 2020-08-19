@@ -1,4 +1,5 @@
 @import './normalize';
+@import './buefy';
 @import './vars';
 
 @import './components/';
@@ -9,6 +10,9 @@
   &:focus {
     outline: none;
   }
+}
+html {
+  overflow: hidden;
 }
 body {
   width: 100vw;
@@ -50,4 +54,23 @@ a {
   font-weight: bold;
   color: $black;
   margin: 0;
+  &--large {
+    font-size: 34px;
+    letter-spacing: -2px;
+  }
+}
+
+.view-container {
+  margin: 16px 88px;
+}
+.view-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.app-page {
+  .title {
+    margin-bottom: 0;
+  }
 }
