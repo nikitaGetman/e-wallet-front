@@ -10,7 +10,7 @@ export default {
   props: {
     theme: {
       type: String,
-      validator: v => ['primary', 'secondary', 'text'].includes(v),
+      validator: v => ['primary', 'secondary'].includes(v),
       default: 'primary'
     },
     rounded: {
@@ -24,6 +24,10 @@ export default {
     icon: {
       type: Boolean,
       default: false
+    },
+    isText: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -31,8 +35,9 @@ export default {
       return {
         'v-button--rounded': this.rounded,
         'v-button--outlined': this.outlined,
+        'v-button--is-text': this.isText,
         'v-button--icon': this.icon,
-        [`v-button--${this.theme}`]: true
+        [`v-button--theme-${this.theme}`]: true
       }
     }
   }
@@ -44,9 +49,6 @@ export default {
   border: 2px solid $primary;
   padding: 2px 4px;
   transition: all 0.2s;
-  &:hover {
-    color: $gray-100;
-  }
 
   &--rounded {
     border-radius: 50%;
@@ -59,23 +61,49 @@ export default {
   &--icon {
   }
 
-  &--primary {
+  &--theme-primary {
     color: $primary;
     border-color: $primary;
+
+    &[disabled]:hover {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    &:hover {
+      color: $primary-darken;
+    }
   }
-  &--secondary {
+  &--theme-secondary {
     color: $secondary;
     border-color: $secondary;
+
+    &[disabled]:hover {
+      color: $secondary;
+      border-color: $secondary;
+    }
+
+    &:hover {
+      color: $secondary-darken;
+    }
   }
-  &--text {
-    font-weight: bold;
+  &--theme-gray {
     color: $gray-200;
-    border: none;
-    display: inline-block;
+    border-color: $gray-200;
+
+    &[disabled]:hover {
+      color: $gray-200;
+      border-color: $gray-200;
+    }
 
     &:hover {
       color: $gray-100;
     }
+  }
+  &--is-text {
+    border: none;
+    font-weight: bold;
+    display: inline-block;
   }
 }
 </style>

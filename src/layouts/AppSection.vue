@@ -23,7 +23,7 @@ export default {
 .app-section {
   width: 48%;
   padding: 4px;
-  border: 1px solid red;
+  margin-bottom: 32px;
 
   &__header {
     display: flex;

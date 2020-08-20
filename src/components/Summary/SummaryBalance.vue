@@ -2,7 +2,7 @@
   <app-section title="PayPal Balance" class="summary-balance">
     <template #control>
       <router-link :to="{ name: 'MoneyTransfer' }">
-        <v-button theme="text">Transfer money</v-button>
+        <v-button theme="gray" is-text>Transfer money</v-button>
       </router-link>
     </template>
     <template #default>

@@ -1,13 +1,14 @@
 <template>
   <app-section title="Your Activity" class="summary-activity">
     <template #control>
-      <div class="summary-activity__date-range">
+      <div class="summary-activity__control-wrapper">
         <v-button
           v-for="option in dateRangeOptions"
           :key="option.key"
-          theme="text"
-          :class="{ 'summary-activity__date-range--active': dateRange === option }"
+          class="summary-activity__date-range"
+          :theme="dateRange === option ? 'primary' : 'gray'"
           :disabled="dateRange === option"
+          is-text
           @click="setDateRange(option)"
           >{{ option.name }}</v-button
         >
@@ -56,10 +57,7 @@ export default {
 <style lang="scss">
 .summary-activity {
   &__date-range {
-    &--active {
-      font-weight: bold;
-      color: $primary;
-    }
+    margin-right: 8px;
   }
 }
 </style>

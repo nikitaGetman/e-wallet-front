@@ -2,7 +2,7 @@
   <app-section title="Recent Activity" class="summary-recent-activity">
     <template #control>
       <router-link :to="{ name: 'History' }">
-        <v-button theme="text">More</v-button>
+        <v-button theme="gray" is-text>More</v-button>
       </router-link>
     </template>
     <template id="default">
@@ -35,25 +35,25 @@ export default {
           date: Date.now(),
           isIncoming: false,
           amount: 100.0,
-          user: { name: 'Ivan', surname: 'Ivanov' }
+          user: { name: 'Ivan', surname: 'Ivanov', id: 1 }
         },
         {
-          date: Date.now(),
+          date: Date.now() - 10000,
           isIncoming: true,
           amount: 50.0,
-          user: { name: 'Petr', surname: 'Kuznecov' }
+          user: { name: 'Petr', surname: 'Kuznecov', id: 2 }
         },
         {
-          date: Date.now(),
+          date: Date.now() - 1000000,
           isIncoming: false,
           amount: 68.0,
-          user: { name: 'Elena', surname: 'Black' }
+          user: { name: 'Elena', surname: 'Black', id: 3 }
         },
         {
-          date: Date.now(),
+          date: Date.now() - 1000000000,
           isIncoming: true,
           amount: 610.0,
-          user: { name: 'Andrey', surname: 'Belov' }
+          user: { name: 'Andrey', surname: 'Belov', id: 4 }
         }
       ]
     }
