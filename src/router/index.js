@@ -8,13 +8,18 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'Summary',
+      name: 'summary',
       component: () => import(/* webpackChunkName: "summary" */ '../views/Summary.vue')
     },
     {
       path: '/account',
-      name: 'Account',
+      name: 'account',
       component: () => import(/* webpackChunkName: "account" */ '../views/Account.vue')
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: () => import(/* webpackChunkName: "history" */ '../views/History.vue')
     }
   ]
 })

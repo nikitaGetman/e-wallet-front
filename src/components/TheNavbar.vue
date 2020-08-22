@@ -14,11 +14,11 @@
     </div>
     <nav class="the-navbar__nav">
       <ul class="the-navbar__list">
-        <li class="the-navbar__item" v-for="(item, index) in navItems" :key="index">
-          <router-link class="the-navbar__link" :to="item.to">
+        <li class="the-navbar__item" v-for="(item, index) in navItems" :key="index" @click="redirect(item.to)">
+          <span class="the-navbar__link">
             <i :class="['the-navbar__link-icon', 'fas', item.icon]"></i>
             <span class="the-navbar__link-text">{{ item.text }}</span>
-          </router-link>
+          </span>
         </li>
       </ul>
     </nav>
@@ -48,6 +48,11 @@ export default {
   methods: {
     logout() {
       console.log('logout')
+    },
+    redirect(to) {
+      if (this.$route.name !== to.name) {
+        this.$router.push(to)
+      }
     }
   }
 }
@@ -107,6 +112,7 @@ export default {
   &__link {
     color: $primary-text-color;
     text-align: center;
+
     &-icon {
       font-size: 1.75em;
       transition: 0.2s;

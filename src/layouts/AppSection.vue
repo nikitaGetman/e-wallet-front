@@ -6,6 +6,9 @@
         <slot name="control" />
       </div>
     </div>
+    <div class="app-section__second-row" v-if="$slots.secondRow">
+      <slot name="secondRow" />
+    </div>
     <slot name="default" />
   </div>
 </template>
@@ -29,6 +32,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 16px;
   }
   &__title {

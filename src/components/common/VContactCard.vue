@@ -42,7 +42,11 @@ export default {
 .v-contact-card {
   display: flex;
   align-items: center;
-  margin: 24px 12px 0;
+  margin: 0 12px 32px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   &__avatar {
     margin-right: 16px;

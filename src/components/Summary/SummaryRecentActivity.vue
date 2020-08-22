@@ -1,11 +1,11 @@
 <template>
   <app-section title="Recent Activity" class="summary-recent-activity">
     <template #control>
-      <router-link :to="{ name: 'History' }">
+      <router-link :to="{ name: 'history' }">
         <v-button theme="gray" is-text>More</v-button>
       </router-link>
     </template>
-    <template id="default">
+    <template #default>
       <div class="summary-recent-activity__list">
         <v-activity-card
           v-for="(activity, index) of recentActivities"
@@ -63,5 +63,8 @@ export default {
 
 <style lang="scss">
 .summary-recent-activity {
+  &__list {
+    margin-top: 32px;
+  }
 }
 </style>

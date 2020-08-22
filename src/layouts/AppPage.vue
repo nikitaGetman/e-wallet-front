@@ -3,8 +3,10 @@
     <the-navbar />
     <main class="app-page__main">
       <v-searchrow class="view-container" />
-      <section class="app-page__content">
-        <slot />
+      <section class="app-page__wrapper">
+        <div class="app-page__content">
+          <slot />
+        </div>
       </section>
     </main>
     <the-sidebar />
@@ -37,7 +39,16 @@ export default {
   &__main {
     margin-left: 104px;
     flex-grow: 1;
-    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+  }
+  &__wrapper {
+    height: 100%;
+    overflow-y: auto;
+  }
+  &__content {
+    max-height: 100%;
   }
 }
 </style>

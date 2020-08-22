@@ -74,3 +74,15 @@ a {
     margin-bottom: 0;
   }
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+  padding: 16px 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $gray-360;
+  width: 4px;
+  border-radius: 10px;
+}

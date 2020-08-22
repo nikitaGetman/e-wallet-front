@@ -6,7 +6,7 @@
       </router-link>
     </template>
     <template id="default">
-      <div class="summary-recent-activity__list">
+      <div class="summary-contacts__list">
         <v-contact-card
           v-for="contact of contacts"
           :key="contact.id"
@@ -67,6 +67,9 @@ export default {
 </script>
 
 <style lang="scss">
-.summary-recent-activity {
+.summary-contacts {
+  &__list {
+    margin-top: 32px;
+  }
 }
 </style>

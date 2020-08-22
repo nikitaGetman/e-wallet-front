@@ -10,7 +10,7 @@ export default {
   props: {
     theme: {
       type: String,
-      validator: v => ['primary', 'secondary'].includes(v),
+      validator: v => ['primary', 'secondary', 'gray'].includes(v),
       default: 'primary'
     },
     rounded: {
