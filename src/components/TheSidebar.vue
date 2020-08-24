@@ -15,14 +15,8 @@
       </div>
       <div class="sidebar__carousel sidebar__carousel--card">
         <v-carousel>
-          <v-carousel-item>
-            <v-card>1</v-card>
-          </v-carousel-item>
-          <v-carousel-item>
-            <v-card>2</v-card>
-          </v-carousel-item>
-          <v-carousel-item>
-            <v-card>3</v-card>
+          <v-carousel-item class="sidebar__carousel-item" v-for="(card, index) of cards" :key="index">
+            <credit-card :number="card.number" :expire="card.expire" :type="card.type" />
           </v-carousel-item>
         </v-carousel>
       </div>
@@ -35,14 +29,19 @@
         </v-button>
       </div>
       <div class="sidebar__carousel sidebar__carousel--bank">
-        <!-- TODO -->
+        <v-carousel>
+          <v-carousel-item class="sidebar__carousel-item" v-for="(bank, index) of banks" :key="index">
+            <bank-card :account="bank.account" :name="bank.name" :status="bank.status" />
+          </v-carousel-item>
+        </v-carousel>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import VCard from '@/components/common/VCard.vue'
+import CreditCard from '@/components/common/cards/CreditCard.vue'
+import BankCard from '@/components/common/cards/BankCard.vue'
 import VButton from '@/components/common/VButton.vue'
 import VCarousel from '@/components/common/VCarousel.vue'
 import VCarouselItem from '@/components/common/VCarouselItem.vue'
@@ -50,13 +49,49 @@ import VCarouselItem from '@/components/common/VCarouselItem.vue'
 export default {
   name: 'TheSidebar',
   components: {
-    VCard,
+    CreditCard,
+    BankCard,
     VButton,
     VCarousel,
     VCarouselItem
   },
   data: function() {
-    return {}
+    return {
+      cards: [
+        {
+          number: '5123********1234',
+          expire: '08/23',
+          type: 'mastercard'
+        },
+        {
+          number: '4206********1234',
+          expire: '10/21',
+          type: 'visa'
+        },
+        {
+          number: '5232********9654',
+          expire: '01/21',
+          type: 'mastercard'
+        }
+      ],
+      banks: [
+        {
+          account: '************1234',
+          name: 'U.S. Bank',
+          status: 'checking'
+        },
+        {
+          account: '************3214',
+          name: 'Sberbank',
+          status: 'approved'
+        },
+        {
+          account: '************6514',
+          name: 'Sberbank',
+          status: 'approved'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -96,6 +131,11 @@ export default {
         margin-right: 50px;
       }
     }
+  }
+
+  & .carousel &__carousel-item {
+    width: 484px;
+    padding-right: 60px;
   }
 }
 </style>

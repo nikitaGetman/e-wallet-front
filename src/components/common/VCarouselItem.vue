@@ -23,8 +23,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.carousel-item {
-  width: unset !important;
-}
-</style>
+<style lang="scss"></style>

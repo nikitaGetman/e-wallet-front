@@ -33,7 +33,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
   &__title {
     margin: 0;

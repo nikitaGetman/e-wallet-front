@@ -1,16 +1,22 @@
 <template>
   <button class="v-button" :class="buttonClasses" v-bind="$attrs" v-on="$listeners">
-    <slot />
+    <span class="v-button__icon" v-if="icon">
+      <v-icon :name="icon" size="1.5" />
+    </span>
+    <slot name="default" />
   </button>
 </template>
 
 <script>
+import VIcon from '@/components/common/VIcon.vue'
+
 export default {
   name: 'VButton',
+  components: { VIcon },
   props: {
     theme: {
       type: String,
-      validator: v => ['primary', 'secondary', 'gray'].includes(v),
+      validator: v => ['primary', 'secondary', 'gray', 'white'].includes(v),
       default: 'primary'
     },
     rounded: {
@@ -22,8 +28,8 @@ export default {
       default: false
     },
     icon: {
-      type: Boolean,
-      default: false
+      type: String,
+      default: ''
     },
     isText: {
       type: Boolean,
@@ -36,7 +42,7 @@ export default {
         'v-button--rounded': this.rounded,
         'v-button--outlined': this.outlined,
         'v-button--is-text': this.isText,
-        'v-button--icon': this.icon,
+        'v-button--icon': this.icon || this.$slots.icon,
         [`v-button--theme-${this.theme}`]: true
       }
     }
@@ -48,7 +54,7 @@ export default {
 .v-button {
   border: 2px solid $primary;
   padding: 2px 4px;
-  transition: all 0.2s;
+  transition: all 0.15s;
 
   &--rounded {
     border-radius: 50%;
@@ -59,6 +65,30 @@ export default {
   }
 
   &--icon {
+    font-weight: bold;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 120px;
+    padding: 16px 8px;
+    border-radius: 16px;
+    box-shadow: 0 0 16px $gray-360;
+
+    &:hover {
+      box-shadow: 0 0 16px $gray-200;
+    }
+    &:active {
+      box-shadow: 0 0 16px $primary;
+    }
+    svg {
+      path {
+        fill: $primary;
+      }
+    }
+  }
+  &__icon {
+    margin-bottom: 4px;
   }
 
   &--theme-primary {
@@ -100,6 +130,20 @@ export default {
       color: $gray-100;
     }
   }
+  &--theme-white {
+    color: $gray-10;
+    border-color: $white;
+
+    &[disabled]:hover {
+      color: $gray-10;
+      border-color: $white;
+    }
+
+    &:hover {
+      color: $gray-10;
+    }
+  }
+
   &--is-text {
     border: none;
     font-weight: bold;

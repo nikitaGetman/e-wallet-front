@@ -177,7 +177,7 @@ export default {
 
   &__chart {
     position: relative;
-    height: 300px;
+    height: 360px;
   }
 }
 </style>

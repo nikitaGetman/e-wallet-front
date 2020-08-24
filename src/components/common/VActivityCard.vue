@@ -1,13 +1,7 @@
 <template>
   <div class="v-activity-card">
     <div class="v-activity-card__icon" :class="{ 'v-activity-card__icon--incoming': incoming }">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.936 22.936">
-        <!-- eslint-disable max-len -->
-        <path
-          d="M20.692 7.73c0-.619.492-1.111 1.111-1.111s1.127.492 1.127 1.111v14.079c0 .619-.508 1.127-1.127 1.127H7.74a1.131 1.131 0 01-1.127-1.127c0-.619.508-1.127 1.127-1.127h11.364L.328 1.921a1.14 1.14 0 010-1.587 1.112 1.112 0 011.587 0l18.777 18.777V7.73z"
-          fill="#1e201d"
-        />
-      </svg>
+      <v-icon size="1.5" :name="incoming ? 'arrow-top-right' : 'arrow-bottom-left'" />
     </div>
     <div class="v-activity-card__info">
       <div class="v-activity-card__name">
@@ -21,9 +15,11 @@
 
 <script>
 import { getReadableDate } from '@/utils/common'
+import VIcon from '@/components/common/VIcon.vue'
 
 export default {
   name: 'VActivityCard',
+  components: { VIcon },
   props: {
     date: { type: [String, Number], required: true },
     incoming: { type: Boolean, required: true },
@@ -55,12 +51,12 @@ export default {
     margin-right: 16px;
     width: 64px;
     height: 64px;
-    padding: 16px;
+    padding: 14px;
     border-radius: 20px;
     box-shadow: 0 0 16px $gray-360;
+    line-height: 0;
 
     svg {
-      transform: scaleX(-1);
       path {
         fill: $red;
       }
@@ -68,7 +64,6 @@ export default {
 
     &--incoming {
       svg {
-        transform: scaleY(-1);
         path {
           fill: $green;
         }
