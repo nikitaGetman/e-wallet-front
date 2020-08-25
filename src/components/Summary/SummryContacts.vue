@@ -1,11 +1,11 @@
 <template>
   <app-section title="Contacts" class="summary-contacts">
     <template #control>
-      <router-link :to="{ name: 'Contacts' }">
+      <router-link :to="{ name: 'transfer' }">
         <v-button theme="gray" is-text>More</v-button>
       </router-link>
     </template>
-    <template id="default">
+    <template #default>
       <div class="summary-contacts__list">
         <v-contact-card
           v-for="contact of contacts"

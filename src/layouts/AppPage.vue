@@ -4,9 +4,7 @@
     <main class="app-page__main">
       <v-searchrow class="view-container" />
       <section class="app-page__wrapper">
-        <div class="app-page__content">
-          <slot />
-        </div>
+        <slot />
       </section>
     </main>
     <the-sidebar />
@@ -46,9 +44,6 @@ export default {
   &__wrapper {
     height: 100%;
     overflow-y: auto;
-  }
-  &__content {
-    max-height: 100%;
   }
 }
 </style>

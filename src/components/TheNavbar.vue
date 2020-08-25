@@ -33,7 +33,7 @@ export default {
       navItems: [
         { to: { name: 'summary' }, text: 'Summary', icon: 'fa-list-ul' },
         { to: { name: 'history' }, text: 'History', icon: 'fa-history' },
-        { to: { name: 'money-transfer' }, text: 'Transfer', icon: 'fa-hand-holding-usd' },
+        { to: { name: 'transfer' }, text: 'Transfer', icon: 'fa-hand-holding-usd' },
         { to: { name: 'account' }, text: 'Account', icon: 'fa-id-card' },
         { to: { name: 'offers' }, text: 'Offers', icon: 'fa-business-time' },
         { to: { name: 'help' }, text: 'Help', icon: 'fa-tools' }

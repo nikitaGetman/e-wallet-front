@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 .app-section {
+  position: relative;
   width: 48%;
   padding: 4px;
   margin-bottom: 32px;

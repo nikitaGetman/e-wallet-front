@@ -20,6 +20,11 @@ const router = new VueRouter({
       path: '/history',
       name: 'history',
       component: () => import(/* webpackChunkName: "history" */ '../views/History.vue')
+    },
+    {
+      path: '/transfer',
+      name: 'transfer',
+      component: () => import(/* webpackChunkName: "transfer" */ '../views/Transfer.vue')
     }
   ]
 })
