@@ -12,11 +12,6 @@ const router = new VueRouter({
       component: () => import(/* webpackChunkName: "summary" */ '../views/Summary.vue')
     },
     {
-      path: '/account',
-      name: 'account',
-      component: () => import(/* webpackChunkName: "account" */ '../views/Account.vue')
-    },
-    {
       path: '/history',
       name: 'history',
       component: () => import(/* webpackChunkName: "history" */ '../views/History.vue')
@@ -25,6 +20,11 @@ const router = new VueRouter({
       path: '/transfer',
       name: 'transfer',
       component: () => import(/* webpackChunkName: "transfer" */ '../views/Transfer.vue')
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: () => import(/* webpackChunkName: "account" */ '../views/Account.vue')
     }
   ]
 })

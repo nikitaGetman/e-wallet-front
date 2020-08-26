@@ -13,7 +13,7 @@ export default {
     theme: {
       type: String,
       default: 'primary',
-      validator: val => ['primary', 'secondary', 'transparent'].includes(val)
+      validator: val => ['primary', 'secondary', 'white'].includes(val)
     }
   },
   computed: {

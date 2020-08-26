@@ -16,7 +16,7 @@ export default {
   props: {
     theme: {
       type: String,
-      validator: v => ['primary', 'secondary', 'gray', 'white'].includes(v),
+      validator: v => ['primary', 'secondary', 'gray', 'white', 'danger'].includes(v),
       default: 'primary'
     },
     rounded: {
@@ -34,6 +34,10 @@ export default {
     isText: {
       type: Boolean,
       default: false
+    },
+    filled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -42,6 +46,7 @@ export default {
         'v-button--rounded': this.rounded,
         'v-button--outlined': this.outlined,
         'v-button--is-text': this.isText,
+        'v-button--filled': this.filled,
         'v-button--icon': this.icon || this.$slots.icon,
         [`v-button--theme-${this.theme}`]: true
       }
@@ -55,9 +60,12 @@ export default {
   border: 2px solid $primary;
   padding: 2px 4px;
   transition: all 0.15s;
+  padding: 12px 24px;
+  border-radius: 24px;
 
   &--rounded {
     border-radius: 50%;
+    padding: 4px 6px;
   }
 
   &--outlined {
@@ -104,6 +112,15 @@ export default {
       color: $primary-darken;
     }
   }
+  &--theme-primary.v-button--filled {
+    background-color: $primary;
+    color: $white;
+    &:hover {
+      background-color: $primary-lighter;
+      border-color: $primary-lighter;
+    }
+  }
+
   &--theme-secondary {
     color: $secondary;
     border-color: $secondary;
@@ -143,11 +160,27 @@ export default {
       color: $gray-10;
     }
   }
+  &--theme-danger {
+    color: $red;
+    background-color: $pink;
+    border-color: $pink;
+
+    &[disabled]:hover {
+      color: $red;
+      background-color: $pink;
+    }
+
+    &:hover {
+      background-color: $pink-darken;
+      border-color: $pink-darken;
+    }
+  }
 
   &--is-text {
     border: none;
     font-weight: bold;
     display: inline-block;
+    padding: 0;
   }
 }
 </style>

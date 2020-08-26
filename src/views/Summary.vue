@@ -1,10 +1,14 @@
 <template>
   <app-page>
-    <div class="summary view-container view-grid">
-      <summary-balance />
-      <summary-activity-chart />
-      <summary-recent-activity />
-      <summary-contacts />
+    <div class="summary view-container">
+      <div class="v-row">
+        <summary-balance />
+        <summary-activity-chart />
+      </div>
+      <div class="v-row">
+        <summary-recent-activity />
+        <summary-contacts />
+      </div>
     </div>
   </app-page>
 </template>

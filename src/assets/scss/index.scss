@@ -74,9 +74,12 @@ a {
     margin-bottom: 0;
   }
 }
+.v-row {
+  display: flex;
+}
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
   padding: 16px 0;
 }
 

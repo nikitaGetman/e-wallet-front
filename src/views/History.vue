@@ -2,7 +2,7 @@
   <app-page>
     <div class="history view-container">
       <div class="history__header">
-        <h4 class="history__title title title--large">My Transactions</h4>
+        <h4 class="history__title title">My Transactions</h4>
 
         <div class="history__control-wrapper">
           <v-button

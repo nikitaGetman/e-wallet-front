@@ -1,7 +1,7 @@
 <template>
   <div class="app-section">
     <div class="app-section__header">
-      <h4 class="app-section__title title title--large">{{ title }}</h4>
+      <h4 class="app-section__title title">{{ title }}</h4>
       <div class="app-section__control">
         <slot name="control" />
       </div>
@@ -25,9 +25,19 @@ export default {
 <style lang="scss">
 .app-section {
   position: relative;
-  width: 48%;
+  flex: 1 1 50%;
   padding: 4px;
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px;
+
+  &:last-child {
+    padding-right: 0;
+  }
+  &:first-child {
+    padding-left: 0;
+  }
 
   &__header {
     display: flex;
