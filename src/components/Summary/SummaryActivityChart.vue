@@ -180,4 +180,32 @@ export default {
     height: 360px;
   }
 }
+
+@media (max-width: 1800px) {
+  .summary-activity {
+    &__chart {
+      height: 280px;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .summary-activity {
+    &__date-range {
+      margin-right: 6px;
+    }
+    &__chart {
+      height: 240px;
+    }
+  }
+}
+@media (max-width: 1240px) {
+  .summary-activity {
+    &__date-range {
+      margin-right: 6px;
+    }
+    &__chart {
+      height: 200px;
+    }
+  }
+}
 </style>

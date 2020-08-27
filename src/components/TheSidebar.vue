@@ -138,4 +138,32 @@ export default {
     padding-right: 60px;
   }
 }
+
+@media (max-width: 1754px) {
+  .sidebar {
+    width: 450px;
+
+    & .carousel &__carousel-item {
+      width: 400px;
+      padding-right: 48px;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .sidebar {
+    &__section {
+      margin-top: 32px;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .sidebar {
+    width: 400px;
+
+    & .carousel &__carousel-item {
+      width: 350px;
+      padding-right: 32px;
+    }
+  }
+}
 </style>

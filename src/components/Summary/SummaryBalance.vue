@@ -40,7 +40,8 @@ export default {
 .summary-balance {
   &__content {
     margin: 0 auto;
-    width: 540px;
+    width: 100%;
+    max-width: 540px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +57,20 @@ export default {
     display: flex;
     justify-content: space-between;
   }
-  &__action {
+}
+
+@media (max-width: 1584px) {
+  .summary-balance {
+    &__actions {
+      margin-bottom: 0;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .summary-balance {
+    &__card {
+      margin-bottom: 24px;
+    }
   }
 }
 </style>

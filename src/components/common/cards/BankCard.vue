@@ -90,4 +90,24 @@ export default {
     margin-right: 32px;
   }
 }
+
+@media (max-width: 1754px) {
+  .bank-card {
+    &__content {
+      padding: 24px;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .bank-card {
+    &__name {
+      font-size: 1.75em;
+    }
+    &__account {
+      font-size: 1.75em;
+      margin-right: 32px;
+    }
+  }
+}
 </style>

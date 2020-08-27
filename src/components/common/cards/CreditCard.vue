@@ -80,4 +80,18 @@ export default {
     margin-bottom: 48px;
   }
 }
+@media (max-width: 1440px) {
+  .credit-card {
+    &__content {
+      padding: 24px;
+    }
+    &__number {
+      margin-bottom: 24px;
+      font-size: 1.75em;
+    }
+    &__expire {
+      font-size: 12px;
+    }
+  }
+}
 </style>

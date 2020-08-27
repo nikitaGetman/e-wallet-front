@@ -183,4 +183,27 @@ export default {
     padding: 0;
   }
 }
+@media (max-width: 1440px) {
+  .v-button {
+    font-size: 14px;
+
+    &--icon {
+      width: 90px;
+      padding: 8px 4px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+  }
+}
+@media (max-width: 1240px) {
+  .v-button {
+    &--icon {
+      width: 76px;
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
 </style>

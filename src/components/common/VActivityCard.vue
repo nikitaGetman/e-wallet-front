@@ -51,10 +51,13 @@ export default {
     margin-right: 16px;
     width: 64px;
     height: 64px;
-    padding: 14px;
     border-radius: 20px;
     box-shadow: 0 0 16px $gray-360;
     line-height: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     svg {
       path {
@@ -89,6 +92,26 @@ export default {
     margin-left: auto;
     font-size: 24px;
     font-weight: bold;
+  }
+}
+
+@media (max-width: 1584px) {
+  .v-activity-card {
+    margin: 0 4px 16px;
+    &__name,
+    &__amount {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .v-activity-card {
+    margin: 0 4px 12px;
+    &__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+    }
   }
 }
 </style>

@@ -76,4 +76,17 @@ export default {
     line-height: 1em;
   }
 }
+@media (max-width: 1440px) {
+  .balance-card {
+    &__content {
+      padding: 32px 32px;
+    }
+    &__balance {
+      font-size: 2em;
+    }
+    &__background {
+      font-size: 15em;
+    }
+  }
+}
 </style>

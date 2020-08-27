@@ -85,4 +85,34 @@ export default {
     }
   }
 }
+
+@media (max-width: 1584px) {
+  .v-contact-card {
+    margin: 0 4px 16px;
+    &__name {
+      font-size: 18px;
+    }
+    &__actions {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .v-contact-card {
+    margin: 0 4px 12px;
+    &__avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+    }
+    &__actions {
+      font-size: 14px;
+    }
+    &__action {
+      &:not(:last-of-type) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
 </style>

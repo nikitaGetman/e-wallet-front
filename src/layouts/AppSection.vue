@@ -25,8 +25,7 @@ export default {
 <style lang="scss">
 .app-section {
   position: relative;
-  flex: 1 1 50%;
-  padding: 4px;
+  flex: 0 0 50%;
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
@@ -48,6 +47,16 @@ export default {
   }
   &__title {
     margin: 0;
+  }
+}
+@media (max-width: 1440px) {
+  .app-section {
+    padding: 0 24px;
+  }
+}
+@media (max-width: 1240px) {
+  .app-section {
+    padding: 0 16px;
   }
 }
 </style>

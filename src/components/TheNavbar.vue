@@ -147,4 +147,21 @@ export default {
     }
   }
 }
+
+@media (max-width: 1440px) {
+  .the-navbar {
+    width: 84px;
+    padding: 12px 2px;
+    &__item {
+      padding: 12px;
+    }
+    &__nav {
+      margin-top: 16px;
+    }
+  }
+  .profile {
+    padding: 0 4px;
+    font-size: 14px;
+  }
+}
 </style>

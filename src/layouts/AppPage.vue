@@ -35,7 +35,7 @@ export default {
   display: flex;
 
   &__main {
-    margin-left: 104px;
+    padding-left: 104px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -44,6 +44,20 @@ export default {
   &__wrapper {
     height: 100%;
     overflow-y: auto;
+  }
+}
+@media (max-width: 1500px) {
+  .app-page {
+    &__main {
+      width: 920px;
+    }
+  }
+}
+@media (max-width: 1500px) {
+  .app-page {
+    &__main {
+      padding-left: 84px;
+    }
   }
 }
 </style>

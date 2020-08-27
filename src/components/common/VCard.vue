@@ -48,4 +48,9 @@ export default {
     right: 0;
   }
 }
+@media (max-width: 1754px) {
+  .v-card {
+    border-radius: 32px;
+  }
+}
 </style>

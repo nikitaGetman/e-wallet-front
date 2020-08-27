@@ -67,4 +67,11 @@ export default {
     margin-top: 32px;
   }
 }
+@media (max-width: 1584px) {
+  .summary-recent-activity {
+    &__list {
+      margin-top: 0;
+    }
+  }
+}
 </style>

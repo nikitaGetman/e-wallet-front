@@ -78,6 +78,32 @@ a {
   display: flex;
 }
 
+@media (max-width: 1584px) {
+  .view-container {
+    padding: 12px 44px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .title {
+    font-size: 22px;
+    &--large {
+      font-size: 28px;
+    }
+  }
+  .view-container {
+    padding: 12px 32px;
+  }
+}
+@media (max-width: 1440px) {
+  .title {
+    font-size: 20px;
+    &--large {
+      font-size: 24px;
+    }
+  }
+}
+
 ::-webkit-scrollbar {
   width: 4px;
   padding: 16px 0;
