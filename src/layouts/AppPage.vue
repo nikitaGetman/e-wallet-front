@@ -4,7 +4,7 @@
     <main class="app-page__main">
       <v-searchrow class="view-container" />
       <section class="app-page__wrapper">
-        <slot />
+        <router-view />
       </section>
     </main>
     <the-sidebar />

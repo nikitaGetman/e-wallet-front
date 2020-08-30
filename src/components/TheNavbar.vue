@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { LOGOUT } from '@/store/actions/types'
+
 export default {
   name: 'TheNavbar',
   data() {
@@ -47,11 +49,15 @@ export default {
   },
   methods: {
     logout() {
-      console.log('logout')
+      this.$store.dispatch(LOGOUT).finally(() => {
+        this.$router.push({ name: 'login' })
+      })
     },
     redirect(to) {
       if (this.$route.name !== to.name) {
-        this.$router.push(to)
+        this.$router.push(to).catch(() => {
+          console.warn(`Route '${to.name}' does not exist`)
+        })
       }
     }
   }
@@ -78,9 +84,6 @@ export default {
   &__logo {
     font-size: 2.5em;
     color: #3453b0;
-    &:hover {
-      //   color: #3453b0;
-    }
   }
   &__profile {
     margin-top: 12px;
