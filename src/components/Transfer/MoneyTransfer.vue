@@ -40,7 +40,8 @@ export default {
 .money-transfer {
   &__content {
     margin: 0 auto;
-    width: 540px;
+    max-width: 540px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,8 +56,6 @@ export default {
     margin-bottom: 32px;
     display: flex;
     justify-content: space-between;
-  }
-  &__action {
   }
 }
 </style>

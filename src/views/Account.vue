@@ -298,4 +298,26 @@ export default {
     font-weight: bold;
   }
 }
+
+@media (max-width: 1440px) {
+  .card {
+    &__avatar {
+      flex: 0 0 35%;
+    }
+    &__city {
+      font-size: 1.5em;
+    }
+    &__street,
+    &__index {
+      font-size: 1.15em;
+    }
+    &__name {
+      font-size: 1.5em;
+    }
+    &__email,
+    &__phone {
+      font-size: 1em;
+    }
+  }
+}
 </style>

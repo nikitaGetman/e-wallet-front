@@ -183,7 +183,7 @@ export default {
     padding: 0;
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 1480px) {
   .v-button {
     font-size: 14px;
 

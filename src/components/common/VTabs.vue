@@ -71,4 +71,21 @@ export default {
     }
   }
 }
+
+@media (max-width: 1750px) {
+  .v-tabs {
+    margin-bottom: 24px;
+  }
+  .v-tab {
+    margin-right: 32px;
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 1440px) {
+  .v-tab {
+    margin-right: 24px;
+    font-size: 1.1em;
+  }
+}
 </style>
