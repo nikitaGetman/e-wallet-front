@@ -13,29 +13,29 @@ export default {
   state: {
     loading: false,
     model: {
-      key: loadStorageItem(TOKEN_KEY) || null
+      access: loadStorageItem(TOKEN_KEY) || null
     }
   },
   getters: {
     isAuthenticated: state => {
-      return !!(state.model || {}).key
+      return !!(state.model || {}).access
     },
     headers: (state, { isAuthenticated }) => {
       if (!isAuthenticated) return {}
 
       return {
-        Authorization: state.model.key
+        Authorization: state.model.access
       }
     }
   },
   actions: {
-    [LOGIN]: ({ commit, getters }, { username, password }) => {
+    [LOGIN]: ({ commit, getters }, { login, password }) => {
       commit(LOADING, MODULE_NAME)
       return getters.apiService
-        .login({ username, password })
+        .login({ login, password })
         .then(model => {
           commit(SET_MODEL, { name: MODULE_NAME, model })
-          saveStorageItem(TOKEN_KEY, model.key)
+          saveStorageItem(TOKEN_KEY, model.access)
         })
         .catch(throwError(commit, 'Ошибка входа (login)'))
         .finally(() => commit(LOADED, MODULE_NAME))
