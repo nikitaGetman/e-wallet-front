@@ -14,7 +14,12 @@
     </div>
     <nav class="the-navbar__nav">
       <ul class="the-navbar__list">
-        <li class="the-navbar__item" v-for="(item, index) in navItems" :key="index" @click="redirect(item.to)">
+        <li
+          class="the-navbar__item"
+          v-for="(item, index) in navItems"
+          :key="index"
+          @click="redirect(item.to)"
+        >
           <span class="the-navbar__link">
             <i :class="['the-navbar__link-icon', 'fas', item.icon]"></i>
             <span class="the-navbar__link-text">{{ item.text }}</span>
@@ -44,7 +49,7 @@ export default {
   },
   computed: {
     username() {
-      return 'Nikita'
+      return this.$store.state.user.model.name
     }
   },
   methods: {

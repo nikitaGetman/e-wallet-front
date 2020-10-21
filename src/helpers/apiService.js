@@ -44,6 +44,20 @@ const apiService = {
   },
   fetchProfile() {
     return this.client.get('/api/me')
+  },
+
+  // cards and bank accounts
+  fetchCards() {
+    return this.client.get('api/cards')
+  },
+  addCard(params) {
+    return this.client.post('/api/cards/add', params)
+  },
+  fetchBankAccounts() {
+    return this.client.get('/api/bank-accounts')
+  },
+  addBankAccount(params) {
+    return this.client.post('/api/bank-accounts/add', params)
   }
 }
 

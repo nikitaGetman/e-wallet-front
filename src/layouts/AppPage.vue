@@ -4,7 +4,9 @@
     <main class="app-page__main">
       <v-searchrow class="view-container" />
       <section class="app-page__wrapper">
-        <router-view />
+        <v-fade-transition mode="out-in">
+          <router-view />
+        </v-fade-transition>
       </section>
     </main>
     <the-sidebar />
@@ -15,13 +17,15 @@
 import TheNavbar from '@/components/TheNavbar.vue'
 import TheSidebar from '@/components/TheSidebar.vue'
 import VSearchrow from '@/components/VSearchrow.vue'
+import VFadeTransition from '@/components/common/VFadeTransition.vue'
 
 export default {
   name: 'AppPage',
   components: {
     TheNavbar,
     TheSidebar,
-    VSearchrow
+    VSearchrow,
+    VFadeTransition
   }
 }
 </script>

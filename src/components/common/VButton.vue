@@ -134,6 +134,15 @@ export default {
       color: $secondary-darken;
     }
   }
+  &--theme-secondary.v-button--filled {
+    background-color: $secondary;
+    color: $white;
+    &:hover {
+      background-color: $secondary-lighter;
+      border-color: $secondary-lighter;
+    }
+  }
+
   &--theme-gray {
     color: $gray-200;
     border-color: $gray-200;
