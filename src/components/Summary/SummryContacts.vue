@@ -25,43 +25,48 @@
 import AppSection from '@/layouts/AppSection.vue'
 import VButton from '@/components/common/VButton.vue'
 import VContactCard from '@/components/common/VContactCard.vue'
+import { FETCH_CONTACTS, MODULE_NAME as CONTACTS_MODULE } from '@/store/modules/contacts'
 
 export default {
   name: 'SummaryRecentActivity',
   components: { AppSection, VButton, VContactCard },
   computed: {
     contacts() {
-      return [
-        {
-          name: 'Ivan',
-          surname: 'Ivanov',
-          id: 1,
-          lastActivity: Date.now(),
-          avatar: '/images/user-avatars/1.jpg'
-        },
-        {
-          name: 'Petr',
-          surname: 'Kuznecov',
-          id: 2,
-          lastActivity: Date.now() - 100000,
-          avatar: '/images/user-avatars/2.jpg'
-        },
-        {
-          name: 'Elena',
-          surname: 'Black',
-          id: 3,
-          lastActivity: Date.now() - 10000000,
-          avatar: '/images/user-avatars/3.jpg'
-        },
-        {
-          name: 'Andrey',
-          surname: 'Belov',
-          id: 4,
-          lastActivity: Date.now() - 1000000000,
-          avatar: '/images/user-avatars/4.jpg'
-        }
-      ]
+      return this.$store.state[CONTACTS_MODULE].list.slice(0, 5)
+      // return [
+      //   {
+      //     name: 'Ivan',
+      //     surname: 'Ivanov',
+      //     id: 1,
+      //     lastActivity: Date.now(),
+      //     avatar: '/images/user-avatars/1.jpg'
+      //   },
+      //   {
+      //     name: 'Petr',
+      //     surname: 'Kuznecov',
+      //     id: 2,
+      //     lastActivity: Date.now() - 100000,
+      //     avatar: '/images/user-avatars/2.jpg'
+      //   },
+      //   {
+      //     name: 'Elena',
+      //     surname: 'Black',
+      //     id: 3,
+      //     lastActivity: Date.now() - 10000000,
+      //     avatar: '/images/user-avatars/3.jpg'
+      //   },
+      //   {
+      //     name: 'Andrey',
+      //     surname: 'Belov',
+      //     id: 4,
+      //     lastActivity: Date.now() - 1000000000,
+      //     avatar: '/images/user-avatars/4.jpg'
+      //   }
+      // ]
     }
+  },
+  created() {
+    this.$store.dispatch(FETCH_CONTACTS)
   }
 }
 </script>

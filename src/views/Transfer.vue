@@ -4,7 +4,7 @@
 
     <app-section title="Contacts" class="contacts__section">
       <template #control>
-        <v-button theme="gray" is-text>Filter</v-button>
+        <v-button theme="gray" is-text>Add</v-button>
       </template>
       <template #default>
         <div class="contacts__list">
@@ -28,6 +28,7 @@ import AppSection from '@/layouts/AppSection.vue'
 import VButton from '@/components/common/VButton.vue'
 import MoneyTransfer from '@/components/Transfer/MoneyTransfer.vue'
 import VContactCard from '@/components/common/VContactCard.vue'
+import { FETCH_CONTACTS, MODULE_NAME as CONTACTS_MODULE } from '@/store/modules/contacts'
 
 export default {
   name: 'Summary',
@@ -39,100 +40,11 @@ export default {
   },
   computed: {
     contacts() {
-      return [
-        {
-          name: 'Ivan',
-          surname: 'Ivanov',
-          id: 1,
-          lastActivity: Date.now(),
-          avatar: '/images/user-avatars/1.jpg'
-        },
-        {
-          name: 'Petr',
-          surname: 'Kuznecov',
-          id: 2,
-          lastActivity: Date.now() - 100000,
-          avatar: '/images/user-avatars/2.jpg'
-        },
-        {
-          name: 'Elena',
-          surname: 'Black',
-          id: 3,
-          lastActivity: Date.now() - 10000000,
-          avatar: '/images/user-avatars/3.jpg'
-        },
-        {
-          name: 'Andrey',
-          surname: 'Belov',
-          id: 4,
-          lastActivity: Date.now() - 1000000000,
-          avatar: '/images/user-avatars/4.jpg'
-        },
-        {
-          name: 'Petr',
-          surname: 'Kuznecov',
-          id: 2,
-          lastActivity: Date.now() - 100000,
-          avatar: '/images/user-avatars/2.jpg'
-        },
-        {
-          name: 'Elena',
-          surname: 'Black',
-          id: 3,
-          lastActivity: Date.now() - 10000000,
-          avatar: '/images/user-avatars/3.jpg'
-        },
-        {
-          name: 'Andrey',
-          surname: 'Belov',
-          id: 4,
-          lastActivity: Date.now() - 1000000000,
-          avatar: '/images/user-avatars/4.jpg'
-        },
-        {
-          name: 'Petr',
-          surname: 'Kuznecov',
-          id: 2,
-          lastActivity: Date.now() - 100000,
-          avatar: '/images/user-avatars/2.jpg'
-        },
-        {
-          name: 'Elena',
-          surname: 'Black',
-          id: 3,
-          lastActivity: Date.now() - 10000000,
-          avatar: '/images/user-avatars/3.jpg'
-        },
-        {
-          name: 'Andrey',
-          surname: 'Belov',
-          id: 4,
-          lastActivity: Date.now() - 1000000000,
-          avatar: '/images/user-avatars/4.jpg'
-        },
-        {
-          name: 'Petr',
-          surname: 'Kuznecov',
-          id: 2,
-          lastActivity: Date.now() - 100000,
-          avatar: '/images/user-avatars/2.jpg'
-        },
-        {
-          name: 'Elena',
-          surname: 'Black',
-          id: 3,
-          lastActivity: Date.now() - 10000000,
-          avatar: '/images/user-avatars/3.jpg'
-        },
-        {
-          name: 'Andrey',
-          surname: 'Belov',
-          id: 4,
-          lastActivity: Date.now() - 1000000000,
-          avatar: '/images/user-avatars/4.jpg'
-        }
-      ]
+      return this.$store.state[CONTACTS_MODULE].list
     }
+  },
+  created() {
+    this.$store.dispatch(FETCH_CONTACTS)
   }
 }
 </script>
@@ -149,7 +61,7 @@ export default {
   &__list {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 24px;
     right: 0;
     bottom: 0;
     margin-top: 60px;

@@ -39,6 +39,7 @@
 <script>
 import VButton from '@/components/common/VButton.vue'
 import VActivityCard from '@/components/common/VActivityCard.vue'
+import { FETCH_ACTIVITY, MODULE_NAME as CONTACTS_MODULE } from '@/store/modules/activity'
 
 export default {
   name: 'History',
@@ -61,110 +62,14 @@ export default {
       ]
     },
     activities() {
-      return [
-        {
-          date: Date.now(),
-          isIncoming: false,
-          amount: 100.0,
-          user: { name: 'Ivan', surname: 'Ivanov', id: 1 }
-        },
-        {
-          date: Date.now() - 10000,
-          isIncoming: true,
-          amount: 50.0,
-          user: { name: 'Petr', surname: 'Kuznecov', id: 2 }
-        },
-        {
-          date: Date.now() - 1000000,
-          isIncoming: false,
-          amount: 68.0,
-          user: { name: 'Elena', surname: 'Black', id: 3 }
-        },
-        {
-          date: Date.now() - 1000000000,
-          isIncoming: true,
-          amount: 610.0,
-          user: { name: 'Andrey', surname: 'Belov', id: 4 }
-        },
-        {
-          date: Date.now(),
-          isIncoming: false,
-          amount: 100.0,
-          user: { name: 'Ivan', surname: 'Ivanov', id: 1 }
-        },
-        {
-          date: Date.now() - 10000,
-          isIncoming: true,
-          amount: 50.0,
-          user: { name: 'Petr', surname: 'Kuznecov', id: 2 }
-        },
-        {
-          date: Date.now() - 1000000,
-          isIncoming: false,
-          amount: 68.0,
-          user: { name: 'Elena', surname: 'Black', id: 3 }
-        },
-        {
-          date: Date.now() - 1000000000,
-          isIncoming: true,
-          amount: 610.0,
-          user: { name: 'Andrey', surname: 'Belov', id: 4 }
-        },
-        {
-          date: Date.now() - 1000000,
-          isIncoming: false,
-          amount: 68.0,
-          user: { name: 'Elena', surname: 'Black', id: 3 }
-        },
-        {
-          date: Date.now() - 1000000000,
-          isIncoming: true,
-          amount: 610.0,
-          user: { name: 'Andrey', surname: 'Belov', id: 4 }
-        },
-        {
-          date: Date.now() - 1000000,
-          isIncoming: false,
-          amount: 68.0,
-          user: { name: 'Elena', surname: 'Black', id: 3 }
-        },
-        {
-          date: Date.now() - 1000000000,
-          isIncoming: true,
-          amount: 610.0,
-          user: { name: 'Andrey', surname: 'Belov', id: 4 }
-        },
-        {
-          date: Date.now(),
-          isIncoming: false,
-          amount: 100.0,
-          user: { name: 'Ivan', surname: 'Ivanov', id: 1 }
-        },
-        {
-          date: Date.now() - 10000,
-          isIncoming: true,
-          amount: 50.0,
-          user: { name: 'Petr', surname: 'Kuznecov', id: 2 }
-        },
-        {
-          date: Date.now() - 1000000,
-          isIncoming: false,
-          amount: 68.0,
-          user: { name: 'Elena', surname: 'Black', id: 3 }
-        },
-        {
-          date: Date.now() - 1000000000,
-          isIncoming: true,
-          amount: 610.0,
-          user: { name: 'Andrey', surname: 'Belov', id: 4 }
-        }
-      ]
+      return this.$store.state[CONTACTS_MODULE].list
     }
   },
-
   created() {
     this.setDateRange(this.dateRangeOptions[0])
+    this.$store.dispatch(FETCH_ACTIVITY)
   },
+
   methods: {
     setDateRange(value) {
       this.dateRange = value
